@@ -1,6 +1,7 @@
 package org.zerock.mapper;
 
 import java.util.List;
+import java.util.stream.IntStream;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -26,7 +27,7 @@ public class ReplyMapperTests {
 
 //	@Test //등록
 //	public void testCreate() {
-//		IntStream.rangeClosed(1, 10).forEach(i -> {
+//		IntStream.rangeClosed(1, 10).forEach( i -> {
 //
 //			ReplyVO vo = new ReplyVO();
 //
@@ -76,13 +77,13 @@ public class ReplyMapperTests {
 //	}
 	
 	
-	@Test // 댓글 게시물 번호 확인
-	public void testList() {
-		Criteria cri = new Criteria();
-		
-		//15L
-		List<ReplyVO> replies = mapper.getListWithPaging(cri, bnoArr[0]);
-		
-		replies.forEach(reply -> log.info(reply));
-	}
+//	@Test // 댓글 게시물 번호 확인
+//	public void testList() {
+//		Criteria cri = new Criteria();
+//		
+//		//15L
+//		List<ReplyVO> replies = mapper.getListWithPaging(cri, bnoArr[0]);
+//		
+//		replies.forEach(reply -> log.info(reply));
+//	}
 }
