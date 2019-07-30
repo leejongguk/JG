@@ -70,13 +70,11 @@ public class BoardController {
 			rttr.addFlashAttribute("result","success");
 		}
 		
-		
 //		  rttr.addAttribute("pageNum",cri.getPageNum());
 //		  rttr.addAttribute("amount",cri.getAmount());
 //		  rttr.addAttribute("keyword",cri.getKeyword());
 //		  rttr.addAttribute("type",cri.getType());
 		 
-		
 		return "redirect:/board/list" + cri.getListLink();
 	}
 	
