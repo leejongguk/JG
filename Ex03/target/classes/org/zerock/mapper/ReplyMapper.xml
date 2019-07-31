@@ -18,7 +18,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//En"
 	and rownum <= #{cri.pageNum} * #{cri.amount}
 	) where rn > (#{cri.pageNum} -1) * #{cri.amount}
 	]]>
-	
 	</select>
 
 
