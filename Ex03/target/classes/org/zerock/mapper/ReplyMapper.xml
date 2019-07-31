@@ -6,11 +6,19 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//En"
 
 	<select id="getListWithPaging"
 	resultType="org.zerock.domain.ReplyVO">
-	
+	<![CDATA[
 	select rno, bno, reply, replyer, replyDate, updateDate
+	from 
+	(
+	select /* +INDEX(reply index_reply) */
+	rownum rn, rno, bno, reply, replyer, replyDate, updatedate
 	from reply
 	where bno=#{bno}
-	order by rno asc
+	and rno>0
+	and rownum <= #{cri.pageNum} * #{cri.amount}
+	) where rn > (#{cri.pageNum} -1) * #{cri.amount}
+	]]>
+	
 	</select>
 
 
