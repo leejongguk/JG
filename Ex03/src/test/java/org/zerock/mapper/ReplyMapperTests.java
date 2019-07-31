@@ -19,27 +19,27 @@ import lombok.extern.log4j.Log4j;
 @Log4j
 public class ReplyMapperTests {
 
-	private Long[] bnoArr = { 45L, 47L, 49L, 50L, 51L, 52L };
+	private Long[] bnoArr = { 2491044L, 2491045L, 2491046L, 2491047L, 2491048L, 2491049L };
 
 	@Setter
 	@Autowired
 	private ReplyMapper mapper;
 
-//	@Test //등록
-//	public void testCreate() {
-//		IntStream.rangeClosed(1, 10).forEach( i -> {
-//
-//			ReplyVO vo = new ReplyVO();
-//
-//			// 게시물 번호
-//			vo.setBno(bnoArr[i % 5]);
-//			vo.setReply("댓글 테스트 " + i);
-//			vo.setReplyer("replyer" + i);
-//
-//			mapper.insert(vo);
-//		});
-//	}
-//
+	@Test //등록
+	public void testCreate() {
+		IntStream.rangeClosed(1, 10).forEach( i -> {
+
+			ReplyVO vo = new ReplyVO();
+
+			// 게시물 번호
+			vo.setBno(bnoArr[i % 5]);
+			vo.setReply("댓글 테스트 " + i);
+			vo.setReplyer("replyer" + i);
+
+			mapper.insert(vo);
+		});
+	}
+
 //	@Test // MapperTests 
 //	public void testMapper() {
 //		log.info(mapper);

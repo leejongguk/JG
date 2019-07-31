@@ -16,5 +16,6 @@ public interface ReplyMapper {
 	public int update(ReplyVO vo);
 	
 	public List<ReplyVO> getListWithPaging(
-			@Param("cri") Criteria cri,@Param("bno") Long bno);
+			@Param("cri") Criteria cri,
+			@Param("bno") Long bno);
 }

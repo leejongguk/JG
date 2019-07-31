@@ -15,6 +15,13 @@ alter table reply add constraint fk_reply_board
 foreign key (bno) references tbl_board(bno);
 
 
+insert into board (bno,title, content, writer) values (seq_board.nextval, '안녕하세요', 'hello world', 'user00');
+
+
+insert into board(bno,title, content, writer) (select seq_board.nextval, title, content,writer from board);
+
+truncate table board;
+truncate table reply;
 select * from board;
 
 select * from REPLY;
