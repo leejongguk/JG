@@ -12,7 +12,7 @@ create sequence seq_reply;
 alter table reply add constraint pk_reply primary key (rno);
 
 alter table reply add constraint fk_reply_board
-foreign key (bno) references tbl_board(bno);
+foreign key (bno) references board(bno);
 
 
 insert into board (bno,title, content, writer) values (seq_board.nextval, '안녕하세요', 'hello world', 'user00');
@@ -35,3 +35,5 @@ regdate date default sysdate,
 udatedate date default sysdate
 
 );
+
+create index idx_reply on reply (bno desc, rno asc);
