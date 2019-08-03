@@ -25,8 +25,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 
 <select id="getListWithPaging" resultType="org.zerock.domain.BoardVO">
-<![CDATA[select bno,title,content,writer,regdate,updatedate from (
-select /* +INDEX_DESC(board pk_board) */ rownum rn, bno, title, content, writer, regdate, updatedate from board
+<![CDATA[select bno,title,content,writer,regdate,updatedate,replycnt from (
+select /* +INDEX_DESC(board pk_board) */ rownum rn, bno, title, content, writer, regdate, updatedate, replycnt 
+from board
 where 
 ]]>
 
@@ -60,7 +61,6 @@ select * from board where bno>0
 
 ]]>
 </select>
-
 <select id="getTotalCount" resultType="int">
 select count(*) from board where 
 
@@ -99,5 +99,8 @@ update board set title=#{title}, content=#{content}, writer=#{writer},updateDate
 
 </update>
 
+<update id = "updateReplyCnt">
+update board set replycnt = replycnt+ #{amount} where bno= #{bno}
+</update>
 
 </mapper>

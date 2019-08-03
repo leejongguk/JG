@@ -1,6 +1,7 @@
 package org.zerock.service;
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class SampleServiceImpl implements SampleService {
@@ -10,5 +11,7 @@ public class SampleServiceImpl implements SampleService {
 		
 		return Integer.parseInt(str1) + Integer.parseInt(str2);
 	}
+	
+	
 
 }
