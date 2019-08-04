@@ -29,5 +29,5 @@ HELP.md
 ### VS Code ###
 .vscode/
 
-EX03/target/*
-EX04/target/*
+Ex03/target/
+Ex04/target/
